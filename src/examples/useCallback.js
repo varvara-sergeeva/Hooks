@@ -1,11 +1,6 @@
 import './App.css';
 // вынимаем отдельно хуки с пом ES6 и используем его как функцию
-import React, {
-	useState,
-	useEffect,
-	useRef,
-	useCallback
-} from 'react'
+import React, {useState, useEffect, useRef, useCallback} from 'react'
 
 //! импортируем компонент из другого файла
 import ItemsList from './ItemsList'
@@ -35,44 +30,26 @@ function App() {
 	}, [count])
 
 	//! тело самого компонента
-	return ( <
-		div className = 'wrap' >
-		<
-		div className = 'top' >
-		<
-		h2 className = 'title' > useCallback < /h2> <
-		ul >
-		<
-		li > < p className = 'description' > < b > useCallback < /b> - ограничивает количество вызовов функции, те она работает только при изменении указаных зависимостей</p > < /li> <
-		li > < p className = 'description' > useCallback в отличие от useEffect не вызывается при рендере < b > < /b></p > < /li> <
-		li > < p className = 'description' > < b > < /b></p > < /li> <
-		li > < p className = 'description' > отличие мемо от коллбэка, мемо кэширует и возвращает итоговое значенние функции и не может принимать параметры для функции, а useCallback может < b > < /b></p > < /li> <
-		li > < p className = 'description' > useCallback состоит из двух параметров: первый это сама функция, второй это параметры которые определяют ее вызов < b > < /b></p > < /li> <
-		/ul> <
-		/div> <
-		div className = 'content' >
-		<
-		h3 className = 'sourse'
-		style = {
-			styles
-		} > Количество элементов: {
-			count
-		} < /h3> <
-		button className = 'plus'
-		onClick = {
-			() => setCount(prev => prev + 1)
-		} > plus < /button> <
-		button className = 'push'
-		onClick = {
-			() => setColored(prev => !prev)
-		} > color < /button> {
-			/* обращаемся к иному копмоненту*/ } <
-		ItemsList getItems = {
-			generateItemsFromAPI
-		}
-		/> <
-		/div> <
-		/div>
+	return ( 
+		<div className='wrap'>
+			<div className='top'>
+				<h2 className='title'>useCallback</h2>
+				<ul>
+					<li><p className='description'><b>useCallback</b> - ограничивает количество вызовов функции, те она работает только при изменении указаных зависимостей</p></li>
+					<li><p className='description'>useCallback в отличие от useEffect не вызывается при рендере<b></b></p></li>
+					<li><p className='description'><b></b></p></li>
+					<li><p className='description'> отличие мемо от коллбэка, мемо кэширует и возвращает итоговое значенние функции и не может принимать параметры для функции, а useCallback может <b></b></p></li>
+					<li><p className='description'>useCallback состоит из двух параметров: первый это сама функция, второй это параметры которые определяют ее вызов<b></b></p></li>
+				</ul>
+			</div>
+			<div className='content'>
+				<h3 className='sourse' style={styles}>Количество элементов: {count}</h3>
+				<button className='plus' onClick={() => setCount(prev => prev + 1)}>plus</button>
+				<button className='push' onClick={() => setColored(prev => !prev)}>color</button>
+					{/* обращаемся к иному копмоненту*/}
+				<ItemsList getItems={generateItemsFromAPI}/>
+			</div>
+		</div>
 	)
 }
 
