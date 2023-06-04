@@ -62,11 +62,12 @@ function App() {
 			<div className='top'>
 				<h2 className='title'>useEffect</h2>
 				<ul>
-					<li><p className='description'><b>useEffect</b> - <span className='red'>callback</span> функция которая вызыватся когда мы определим, либо по дефолту при каждом рендере</p></li>
+					<li><p className='description'><b>useEffect</b> - <span className='red'>callback</span> функция которая вызыватся когда мы определим, либо по дефолту при каждом рендере<br/><b>{`useEffect(() => {какая-либо функция}, [зависимость])`}</b></p></li>
 					<li><p className='description'>мы можем задать зависимость при которой будет срабатывать хук, например эффект будет сработывать только после изменения <b>useState - type</b></p></li>
 					<li><p className='description'>если хотим, чтобы useEffect вызвался один раз, то надо в условие поставить пустой массив</p></li>
 					<li><p className='description'>любые слушатели которые мы добавляем нужно <b>удалять,</b> они влияют на производительность. Удаляем через <b>return</b> с функцией</p></li>
 					<li><p className='description'>useEffect <span className='red'>нельзя</span> использовать с useState так как это вызывает бесконечный цикл<b></b></p></li>
+					<li><p className='description'>желательно каждый useEffect <b>подписывать</b> в комментарии что он делает, так легче будет разобраться в функционале</p></li>
 				</ul>
 			</div>
 			<div className='content'>

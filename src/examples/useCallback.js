@@ -25,6 +25,7 @@ function App() {
 	//}, [count])
 
 	//! можем использовать Параметры!!
+	// indexNum - определяем в ItemList
 	const generateItemsFromAPI = useCallback((indexNum) => {
 		return new Array(count).fill('').map((_, i) => `элемент ${i + indexNum}`)
 	}, [count])
@@ -37,7 +38,7 @@ function App() {
 				<ul>
 					<li><p className='description'><b>useCallback</b> - ограничивает количество вызовов функции, те она работает только при изменении указаных зависимостей</p></li>
 					<li><p className='description'>useCallback в отличие от useEffect не вызывается при рендере<b></b></p></li>
-					<li><p className='description'><b></b></p></li>
+					<li><p className='description'>например, хотим генерировать эл-т в зависимости от счетчика: <br/><b>{`useCallback(() => {генерируем эл-т}, [счетчик])`}</b></p></li>
 					<li><p className='description'> отличие мемо от коллбэка, мемо кэширует и возвращает итоговое значенние функции и не может принимать параметры для функции, а useCallback может <b></b></p></li>
 					<li><p className='description'>useCallback состоит из двух параметров: первый это сама функция, второй это параметры которые определяют ее вызов<b></b></p></li>
 				</ul>
